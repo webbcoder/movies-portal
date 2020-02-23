@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card-header">
+    {{movie.title | titlecase}}
+  </div>
+  <div class="card-block">
+    <div class="card-media-block wrap">
+      <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="card-media-image"
+           (error)="movie.poster_path=defaultImg"
+      >
+      <div class="card-media-description">
+        <span class="card-media-title">
+          <strong>Original title:</strong>{{movie.original_title}}
+        </span>
+        <span class="card-media-text">
+          <strong>Release date: </strong>{{movie.release_date | date: 'yyyy/MM/dd': null}}
+        </span>
+      </div>
+    </div>
+    <div class="card-text">
+      {{movie.overview | slice:0:100}}...
+    </div>
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-sm btn-link">Action</button>
+  </div>
+</div>
+

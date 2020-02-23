@@ -1,0 +1,34 @@
+<div class="content-container search-page-container">
+  <div class="clr-row" *ngIf="isResult; else noResult">
+    <app-movie
+      class=".clr-col-sm-6 clr-col-lg-4 clr-col-4 movie"
+      [movie]="movie" *ngFor="let movie of movies">
+    </app-movie>
+  </div>
+</div>
+<ng-template #noResult>
+  <div class="content-container">
+    <div class="content-area">
+    <div class="clr-row">
+      <div class="clr-col-12">
+      <div class="alert alert-warning" role="alert">
+        <div class="alert-items">
+          <div class="alert-item static">
+            <div class="alert-icon-wrapper">
+              <clr-icon class="alert-icon" shape="exclamation-triangle"></clr-icon>
+            </div>
+            <span class="alert-text">
+              Sorry, movies not found
+            </span>
+          </div>
+        </div>
+        <a [routerLink]="['/']" class="btn btn-success-outline btn-sm">
+          Back to main
+        </a>
+      </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</ng-template>
+

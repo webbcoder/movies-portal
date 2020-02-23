@@ -1,0 +1,45 @@
+<section class="nav-group">
+  <form clrForm class="clr-form" [formGroup]="form" (ngSubmit)="submit()" >
+    <div class="clr-form-control">
+      <label  class="clr-control-label">Genres</label>
+      <div class="clr-control-container">
+        <div class="clr-input-wrapper">
+          <select clrSelect formControlName="with_genres">
+            <option value="">All</option>
+            <option value="{{genre.id}}"
+                    *ngFor="let genre of genres"
+            >{{genre.name}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="clr-form-control">
+      <label  class="clr-control-label">Years</label>
+      <div class="clr-control-container">
+        <div class="clr-input-wrapper">
+          <select clrSelect formControlName="year">
+            <option value="">All</option>
+            <option value="{{year}}" *ngFor="let year of years">{{year}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="clr-form-control">
+      <label  class="clr-control-label">Rating</label>
+      <div class="clr-control-container">
+        <div class="clr-input-wrapper">
+          <select clrSelect formControlName="vote_average.gte">
+            <option value="">All</option>
+            <option value="{{r}}" *ngFor="let r of rating">&ge;&emsp;{{r}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="clr-form-control">
+      <label  class="clr-control-label"></label>
+      <div class="clr-control-container">
+        <button class="btn btn-sm" type="submit" >Apply<clr-icon shape="check"></clr-icon></button>
+      </div>
+    </div>
+  </form>
+</section>

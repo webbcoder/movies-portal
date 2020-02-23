@@ -1,0 +1,18 @@
+<clr-main-container class="main-container">
+  <clr-header class="header header-6">
+    <div class="branding">
+      <a [routerLink]="['/']"   class="nav-link">
+        <span class="title">Movies project</span>
+      </a>
+    </div>
+      <form clrForm [formGroup]="form" (ngSubmit)="submit()" class="search">
+
+        <label  (mouseup)="submit()"></label>
+        <input class="header-search"  type="text"
+               placeholder="Search for keywords..."
+               formControlName="search"
+        >
+      </form>
+  </clr-header>
+  <router-outlet></router-outlet>
+</clr-main-container>

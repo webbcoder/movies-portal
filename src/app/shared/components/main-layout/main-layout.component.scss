@@ -1,0 +1,13 @@
+.header-search{
+  margin-left: .5rem ;
+}
+@media screen and (max-width: 768px){
+  .header{
+    .search{
+      label,
+      .header-search{
+        display: none;
+      }
+    }
+  }
+}
